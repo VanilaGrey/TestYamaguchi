@@ -1,0 +1,15 @@
+{% extends '../main.twig' %}
+
+{% block main %}
+	<section class="section">
+		<h1 class="section__heading">{{ pageHeading }}</h1>
+
+		<ul class="section__list">
+			{% for item in jobs %}
+				<li>
+					{% include '../blocks/test2.twig' with item %}
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endblock %}

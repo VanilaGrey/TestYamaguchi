@@ -1,9 +1,9 @@
-@each $weight in 400, 700 {
+@each $weight in 300 {
 	@font-face {
 		font-weight: $weight;
 		font-style: normal;
-		font-family: "PT Sans";
+		font-family: "Ubuntu";
 		font-display: swap;
-		src: url("../fonts/ptsans-#{$weight}.woff2") format("woff2");
+		src: url("../fonts/Ubuntu-#{$weight}.woff2") format("woff2");
 	}
 }

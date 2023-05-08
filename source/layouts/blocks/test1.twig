@@ -1,0 +1,12 @@
+<section class="promo">
+	<div class="promo__picture">
+		{% include '../blocks/picture.twig' with image2|merge({ className: 'promo__image-table' }) %}
+		{% include '../blocks/picture.twig' with image1|merge({ className: 'promo__image-table-legs' }) %}
+	</div>
+	<button type="button" class="promo__button promo__button--top">вверх</button>
+	<button type="button" class="promo__button promo__button--bottom">вниз</button>
+	<div class="promo__content">
+		<h2 class="promo__heading">{{ heading }}</h2>
+		{{ content }}
+	</div>
+</section>

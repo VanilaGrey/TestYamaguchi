@@ -1,0 +1,13 @@
+.choice {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	justify-content: center;
+	gap: 10px 30px;
+	margin: 50px;
+	padding: 0;
+	list-style: none;
+}
+
+.choice__link {
+	display: block;
+}

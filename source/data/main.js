@@ -1,12 +1,28 @@
-export default ({ error, pageName, status }) => ({
-	appData: {
-		page: {
-			error,
-			pageName,
-			status
-		}
+const pages = [
+	{
+		title: 'Тестовое 1',
+		url: 'test1.html'
 	},
-	description: 'My project',
-	pixelperfect: JSON.stringify({ breakpoints: [1200], ext: 'webp' }),
-	projectName: 'My app'
+	{
+		title: 'Тестовое 2',
+		url: 'test2.html'
+	}
+];
+
+export default ({ pageName }) => ({
+	getImages(filename, additions = {}) {
+		const image = Object.assign(additions, {
+			default: `images/${filename}.jpg`,
+			default2x: `images/${filename}@2x.jpg`,
+			webp: `images/${filename}.webp`,
+			webp2x: `images/${filename}@2x.webp`
+		});
+
+		return image;
+	},
+	isIndex: pageName === 'index.html',
+	pages,
+	pixelperfect: JSON.stringify({ breakpoints: [1500], ext: 'webp' }),
+	projectName: 'VanilaGrey',
+	ringPage: pages[0],
 });
