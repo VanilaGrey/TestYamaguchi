@@ -1,0 +1,10 @@
+<section class="content">
+	<h2 class="content__heading">{{ heading }}</h2>
+	<div class="content__text">{{ text }}</div>
+		<div class="content__picture">
+		{% include '../blocks/picture.twig' with image1|merge({ className: 'content__image-statuette' }) %}
+		{% include '../blocks/picture.twig' with image2|merge({ className: 'content__image-phone' }) %}
+	</div>
+	<p class="content__action">{{ action }}</p>
+	<p class="content__label">Скажи: {{ label }}</p>
+</section>

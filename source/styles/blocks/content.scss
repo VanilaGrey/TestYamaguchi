@@ -1,0 +1,106 @@
+.content {
+	color: $color-white;
+	background-color: #181818;
+}
+
+.content__heading {
+	margin: 0;
+	padding: 20px 60px 10px 0;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 34px;
+	line-height: 100%;
+	font-family: "Montserrat", sans-serif;
+}
+
+.content__text {
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 170%;
+	font-family: "Montserrat", sans-serif;
+}
+
+.content__picture {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: 300px;
+		left: 18%;
+		z-index: 2;
+		width: 194px;
+		height: 64px;
+		background-color: $color-black;
+		animation: circle-expand 2s forwards, circle-shrink 2s forwards 7s;
+
+		@include graphic-icon(circle);
+	}
+
+	&::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
+		width: 100%;
+		height: 25.2%;
+		background-color: #181818;
+	}
+
+	@keyframes circle-expand {
+		0% {
+			transform: scale(0);
+		}
+
+		100% {
+			transform: scale(2);
+		}
+	}
+
+	@keyframes circle-shrink {
+		0% {
+			transform: scale(2);
+		}
+
+		100% {
+			transform: scale(1);
+		}
+	}
+
+	.content__image-statuette {
+		position: relative;
+		z-index: 2;
+		transform: translateY(50px);
+		opacity: 0;
+		animation: girl-appear 5s ease-in-out 2s forwards, girl-levitate 3s ease-in-out 7s infinite alternate;
+	}
+
+	@keyframes girl-appear {
+		0% {
+			transform: translateY(850px);
+			opacity: 1;
+		}
+
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+
+	@keyframes girl-levitate {
+		0% {
+			transform: translateY(0);
+		}
+
+		50% {
+			transform: translateY(-10px);
+		}
+
+		100% {
+			transform: translateY(0);
+		}
+	}
+}

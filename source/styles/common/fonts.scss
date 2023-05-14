@@ -1,9 +1,19 @@
-@each $weight in 300 {
-	@font-face {
-		font-weight: $weight;
-		font-style: normal;
-		font-family: "Ubuntu";
-		font-display: swap;
-		src: url("../fonts/Ubuntu-#{$weight}.woff2") format("woff2");
+@each $weight in (300, 400, 700, 900) {
+	@each $font-family in ("Ubuntu", "Montserrat", "Bebas Neue") {
+		@font-face {
+			font-weight: $weight;
+			font-style: normal;
+			font-family: $font-family;
+			font-display: swap;
+			src: url("../fonts/Ubuntu-#{$weight}.woff2") format("woff2");
+
+			@if $font-family == "Bebas Neue" {
+				src: url("../fonts/BebasNeue-#{$weight}.woff2") format("woff2");
+			}
+
+			@if $font-family == "Montserrat" {
+				src: url("../fonts/Montserrat-#{$weight}.woff2") format("woff2");
+			}
+		}
 	}
 }

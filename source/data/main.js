@@ -22,7 +22,7 @@ export default ({ pageName }) => ({
 	},
 	isIndex: pageName === 'index.html',
 	pages,
-	pixelperfect: JSON.stringify({ breakpoints: [1500], ext: 'webp' }),
+	pixelperfect: JSON.stringify({ breakpoints: [320, 1600], ext: 'webp' }),
 	projectName: 'VanilaGrey',
-	ringPage: pages[0],
+	ringPage: pages[0]
 });
